@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #1E6F9F;
+  --secondary: #5E60CE;
+  --input-bg: #ececec;
+  --badge: #333333;
+  --muted: #808080;
+  --light: #F2F2F2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0D0D0D;
+    --foreground: #F2F2F2;
+    --input-bg: #333333;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: #1A1A1A;
+  font-family: var(--base-font), sans-serif;
+}
+.text-primary {
+  color: var(--primary);
+}
+.text-secondary {
+  color: var(--secondary);
+}
+
+.btn-primary {
+  @apply bg-[var(--primary)] text-[var(--foreground)] px-4 py-3 rounded-md outline-none focus:outline-none border-0;
+}
+
+.badge {
+  @apply px-4 py-1 font-bold rounded-xl;
+}
+.badge-light {
+  @apply bg-[var(--badge)];
+}
+
+.form-control {
+  @apply block w-full bg-[var(--input-bg)] px-4 py-3 rounded-md outline-none focus:outline-none border border-solid border-gray-700;
+}
+.form-control.error {
+  @apply border-red-500;
+}
+.text-light {
+  @apply text-[var(--light)];
+}
+.text-muted {
+  @apply text-[var(--muted)];
+}
